@@ -24,7 +24,7 @@
   <li>It looks for Android TV and Google TV devices on your local Wi-Fi network, so you can pick one. On Android 17 and newer it asks for the “Nearby devices” permission for this.</li>
   <li>It connects directly to the TV you choose, over your home network, and sends it the buttons you press. During pairing the TV receives the app's name together with your phone's model name (for example “Pixel 7a”), so the TV can tell paired phones apart.</li>
   <li>While connected, the TV sends the phone its make and model, its volume level, the name of the app that is open on the TV and the text of the text field selected on the TV. This is how the Android TV remote protocol works. The app uses the make and model as the TV's name when it has no other; the rest is not shown, not stored and not passed on, and is gone when the connection closes.</li>
-  <li>Optionally, as a backup when Wi-Fi does not work, the phone can act as a Bluetooth keyboard for the same TV. It asks for the Bluetooth “Nearby devices” permission only when you set this up. On Android 11 and older, Android itself requires the “Location” permission before an app may see nearby Bluetooth devices, so the app asks for that instead; it never reads your location. The phone pairs with the TV using the Bluetooth address the TV announces on your network; if the TV announces none, it searches for nearby Bluetooth devices so you can pick the TV (the search is not used to find your location). After that it sends the TV only the buttons you press.</li>
+  <li>Optionally, the phone can act as a Bluetooth keyboard for the TV: as a backup when Wi-Fi does not work, or as the only connection to a TV you add over Bluetooth. It asks for the Bluetooth “Nearby devices” permission only when you set this up. On Android 11 and older, Android itself requires the “Location” permission before an app may see nearby Bluetooth devices, so the app asks for that instead; it never reads your location. The phone pairs with the TV using the Bluetooth address the TV announces on your network; if the TV announces none, it searches for nearby Bluetooth devices so you can pick the TV (the search is not used to find your location). After that it sends the TV only the buttons you press.</li>
   <li>It does not contact any server on the internet.</li>
 </ul>
 
@@ -33,10 +33,11 @@
   <li>A certificate and key created on your phone, which the TV uses to recognise it after pairing.</li>
   <li>The local network address and the name of the TV you paired with.</li>
   <li>The Bluetooth address a paired TV announces on your network, so the Bluetooth backup can later be set up with the right TV. It is kept even if you never set up Bluetooth.</li>
-  <li>Your settings in the app (for example whether the screensaver button is shown).</li>
+  <li>For a TV you set up over Bluetooth: its Bluetooth address and Bluetooth name.</li>
+  <li>Your settings in the app (for example the colour), and whether the screensaver button found the helper app on each TV.</li>
 </ul>
 <p>This stays in the app's private storage on your phone. It is excluded from cloud backups and from transfers to a new phone, and it is removed when you uninstall the app or clear its data.</p>
-<p>Two things are kept outside the app and are not removed with it. The TV keeps its own record of your phone (name and certificate) until you remove it on the TV or reset the TV. If you set up the Bluetooth backup, the pairing also stays in your phone's Bluetooth settings and in the TV's, until you remove it there.</p>
+<p>Two things are kept outside the app and are not removed with it. The TV keeps its own record of your phone (name and certificate) until you remove it on the TV or reset the TV. If you set up Bluetooth with a TV, the pairing also stays in your phone's Bluetooth settings and in the TV's, until you remove it there.</p>
 
 <h2>The TV helper app</h2>
 <p>The helper has no internet access and no permissions. It only starts the screensaver on the TV when the phone app asks for it, and offers a plain black screensaver. It stores nothing.</p>
